@@ -1,9 +1,7 @@
 
 #include <iostream>
 using namespace std;
-
-
-
+#include "../common/printer.hpp"
 
 // O(n**2)
 int *twoSum(int *inputData, int target, int size) {
@@ -22,17 +20,17 @@ int *twoSum(int *inputData, int target, int size) {
   return result;
 }
 
-void test(){
-  int* values = new int[7]{1,0,10,12,13,14,8};
+void test() {
+  int size = 7;
+  int *values = new int[size]{1, 0, 10, 12, 13, 14, 8};
+  printList(values, size);
   int target = 11;
-  cout << "testing..." << endl;
+  cout << "testing...." << endl;
 
-
-  auto result = twoSum(values,11,7); 
-  cout << result[0] <<"  "<< result[1] << endl;
-  cout << "check " << ((values[result[0]] + values[result[1]]) == target) << endl;
+  auto result = twoSum(values, 11, size);
+  cout << result[0] << "  " << result[1] << endl;
+  cout << "check " << ((values[result[0]] + values[result[1]]) == target)
+       << endl;
   delete result;
   delete values;
 }
-
-

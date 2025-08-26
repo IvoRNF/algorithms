@@ -7,8 +7,8 @@ if [ $# -eq 0 ]
 then
     echo "Full compilation..."
     # rm -r ./build/*
-    # for fullFileName in ./**/*.cpp  ./*.cpp   ; do
-    for fullFileName in ./*.cpp   ; do
+    for fullFileName in ./**/*.cpp  ./*.cpp   ; do
+    # for fullFileName in ./*.cpp   ; do
         fname=${fullFileName##*/} #remove base path from file name
         fname=${fname%.*} #remove extension from file name
         echo "g++ -c ${fullFileName} -o "./build/$fname.o"" 
